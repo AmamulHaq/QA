@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QA</title>
+    <link rel="stylesheet" type="text/css" href="QA.css" />
+    <style>
+      h1 {
+        color: rgb(197, 239, 238);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="box">
+        <form>
+          <h1>Question and Answer</h1>
+          <br />
+          What is your name?<br />
+          <div class="a1">
+            <input type="text" id="name" name="name" placeholder="name" required />
+          </div>
+          <br />
+          How are you?<br />
+          <div class="a2">
+            <input type="radio" name="mood" value="fine" /> fine
+            <input type="radio" name="mood" value="notfine" /> not fine
+          </div>
+          <br />
+          <button type="button" onclick="submitForm()">Submit</button
+          ><br /><br />
+          <div class="output"></div>
+        </form>
+      </div>
+    </div>
+    <script src="QA.js"></script>
+  </body>
+</html>
