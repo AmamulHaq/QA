@@ -30,11 +30,10 @@
   backdrop-filter: blur(15px);
 }
 .a1 {
-  position: relative; 
+  position: relative;
   border-bottom: 2px solid rgb(197, 239, 238);
 }
 .a1 input {
-  
   height: 42px;
   background-color: transparent;
   border: rgb(197, 239, 238);
@@ -48,4 +47,16 @@ button {
   border: none;
   border-radius: 42px;
   font-size: 1em;
+}
+
+.a3 {
+  border: solid rgb(197, 239, 238);
+  border-radius: 42px;
+}
+.a3 input {
+  height: 42px;
+  background-color: transparent;
+  border: rgb(197, 239, 238);
+  outline: rgb(197, 239, 238);
+  padding: 10px 15px 10px ;
 }
