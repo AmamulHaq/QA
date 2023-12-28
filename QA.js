@@ -9,7 +9,7 @@ function submitForm() {
     if (mood == "fine") {
       output.innerHTML += "Thank you " + name;
     } else {
-      output.innerHTML += +name + " Hope good. <br>";
+      output.innerHTML += " "+ name + " Hope good. <br>";
     }
   } else {
     output.innerHTML = "Please answer all questions.";
