@@ -7,9 +7,9 @@ function submitForm() {
 
   if (name && mood) {
     if (mood == "fine") {
-      output.innerHTML += "Thank you " + name;
+      output.innerHTML += "Thank you, " + name + ".<br>";
     } else {
-      output.innerHTML += " "+ name + " Hope good. <br>";
+      output.innerHTML += "Okay " + name + ", Hope good. <br>";
     }
   } else {
     output.innerHTML = "Please answer all questions.";
