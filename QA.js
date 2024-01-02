@@ -15,23 +15,3 @@ function submitForm() {
     output.innerHTML = "Please answer all questions.";
   }
 }
-const express = require("express");
-const mongoose = require("mongoose");
-const app = express();
-const port = 2340;
-
-mongoose
-  .connect("mongodb:")
-  .then(() => {
-    console.log("database connected");
-  })
-  .catch((e) => {
-    console.log(e);
-    console.log("database cannot be connected");
-  });
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
-app.listen(port, () => {
-  console.log("app running in the port: ", port);
-});
