@@ -2,10 +2,10 @@
   "name": "qa",
   "version": "1.0.0",
   "description": "",
-  "main": "QA.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/QA.js"
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "fs": "^0.0.1-security",
     "hps": "^1.1.1",
     "mongoose": "^8.0.3",
+    "nodemon": "^3.0.2",
     "save": "^2.9.0",
     "vercel": "^32.3.0"
   }

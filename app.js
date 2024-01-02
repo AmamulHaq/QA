@@ -6,15 +6,14 @@ const User = require("./user");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static("public"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect("localhost:27017/User.QA", {
+  .connect("mongodb:0.0.0:27017/User", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
   })
   .then(() => {
     console.log("Database connected");
@@ -23,15 +22,16 @@ mongoose
     console.error("Error connecting to the database:", e);
   });
 
-app.post("/", async (req, res) => {
+app.post("/user", async (req, res) => {
   try {
     console.log("its working");
     const userData = new User({
       name: req.body.name,
       mood: req.body.mood,
     });
+    console.log(`${name} and ${mood}`);
 
-    const User = await userData.save();
+    const savedUser = await userData.save();
     res.status(201).send("Data saved successfully");
   } catch (error) {
     res.status(500).send("Error saving data");
@@ -39,9 +39,10 @@ app.post("/", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
+  return res.redirect("index.html");
+}).listen(3000);
 
 app.listen(port, () => {
   console.log("App running on port:", port);
 });
+
