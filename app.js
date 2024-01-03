@@ -1,17 +1,20 @@
 const path = require("path");
 const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const User = require("./user");
 
-const app = express();
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT||27017;
+console.log("this is my first time")
 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const mongoUri = "mongo/QA.user";
 mongoose
-  .connect("mongodb://0.0.0:27017/User", {
+  .connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -29,7 +32,6 @@ app.post("/user", async (req, res) => {
       name: req.body.name,
       mood: req.body.mood,
     });
-    console.log(`${name} and ${mood}`);
 
     const savedUser = await userData.save();
     res.status(201).send("Data saved successfully");
@@ -38,11 +40,9 @@ app.post("/user", async (req, res) => {
   }
 });
 
-app
-  .get("/", (req, res) => {
-    return res.redirect("index.html");
-  })
-  .listen(3000);
+app.get("/", (req, res) => {
+  return res.redirect("index.html");
+});
 
 app.listen(port, () => {
   console.log("App running on port:", port);

@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-
-const userData = new mongoose.Schema({
+mongoose.connect('mongo/QA.user')
+const user = new mongoose.Schema({
   name: { type: String, required: true }, 
   mood: { type: String, required: true }, 
 });
 
-const User = mongoose.model("User", userData);
+const User = mongoose.model("User", user);
 module.exports = User;
