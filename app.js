@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect("mongodb:0.0.0:27017/User", {
+  .connect("mongodb://0.0.0:27017/User", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -38,11 +38,12 @@ app.post("/user", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  return res.redirect("index.html");
-}).listen(3000);
+app
+  .get("/", (req, res) => {
+    return res.redirect("index.html");
+  })
+  .listen(3000);
 
 app.listen(port, () => {
   console.log("App running on port:", port);
 });
-
