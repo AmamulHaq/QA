@@ -12,6 +12,7 @@
       text-align: center;
     }
   </style>
+  <script src="QA.js"></script>
 </head>
 
 <body>
@@ -27,9 +28,9 @@
         <br />
         How are you?<br />
         <div class="a2">
-          <input type="radio" name="mood" value="fine" /> fine
-          <input type="radio" name="mood" value="notfine" /> not fine
-          <input type="text" id="mood" name="mood" placeholder="or else..?" />
+          <input type="radio" name="Mood" value="fine" /> fine
+          <input type="radio" name="Mood" value="notfine" /> not
+          <input type="text" id="mood" name="mood" placeholder="Your mood?" />
         </div>
 
         <br /><br />
@@ -38,14 +39,17 @@
         </div>
         <br />
 
-        <button type="button" onclick="submitForm()">Submit</button><br /><br />
+        <button type="submit" onclick="submitForm()">Submit</button><br /><br />
         <div class="output"></div>
       </form>
     </div>
   </div>
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+    }
+  </script>
   <script src="QA.js"></script>
-  <script src="user.js"></script>
-  <script src="app.js"></script>
 </body>
 
 </html>
